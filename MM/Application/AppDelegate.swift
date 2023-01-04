@@ -10,10 +10,13 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    private let coreDataService = CoreDataService.shared
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        coreDataService.updatingTags()
+        coreDataService.getAnArrayOfTags(with: .income)
+        coreDataService.getAnArrayOfTags(with: .expenses)
+        coreDataService.getAnArrayOfTags(with: .theTypeIsMissing)
         return true
     }
 
